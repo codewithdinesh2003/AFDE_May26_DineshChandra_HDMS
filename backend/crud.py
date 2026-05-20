@@ -47,6 +47,7 @@ def search_tickets(
     category: str = None,
     status: str = None,
     priority: str = None,
+    department: str = None,
 ):
     query = db.query(Ticket)
 
@@ -64,5 +65,7 @@ def search_tickets(
         query = query.filter(Ticket.status == status)
     if priority:
         query = query.filter(Ticket.priority == priority)
+    if department:
+        query = query.filter(Ticket.department.ilike(f"%{department}%"))
 
     return query.order_by(Ticket.created_at.desc()).all()

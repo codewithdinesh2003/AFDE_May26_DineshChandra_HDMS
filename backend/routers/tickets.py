@@ -20,9 +20,13 @@ def search_tickets(
     category: Optional[str] = None,
     status: Optional[str] = None,
     priority: Optional[str] = None,
+    department: Optional[str] = None,
     db: Session = Depends(get_db),
 ):
-    tickets = crud.search_tickets(db, keyword=keyword, category=category, status=status, priority=priority)
+    tickets = crud.search_tickets(
+        db, keyword=keyword, category=category,
+        status=status, priority=priority, department=department,
+    )
     return tickets
 
 

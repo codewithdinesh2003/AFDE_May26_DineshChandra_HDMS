@@ -1,155 +1,306 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import {
+  IconTicket,
+  IconCircleDot,
+  IconClock,
+  IconCircleCheck,
+  IconTrendingUp,
+  IconArrowRight,
+} from '@tabler/icons-react'
 import { getAllTickets } from '../services/api'
 import StatusBadge from '../components/StatusBadge'
 import PriorityBadge from '../components/PriorityBadge'
+import SkeletonLoader from '../components/SkeletonLoader'
+import EmptyState from '../components/EmptyState'
+import { relativeTime, formatTicketId } from '../utils/helpers'
 
-function StatCard({ label, value, icon, colorClass }) {
-  return (
-    <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-5">
-      <div className="flex items-center justify-between">
-        <div>
-          <p className="text-sm text-gray-500">{label}</p>
-          <p className={`text-3xl font-bold mt-1 ${colorClass}`}>{value}</p>
-        </div>
-        <div className={`p-3 rounded-full ${colorClass.replace('text-', 'bg-').replace('-700', '-100').replace('-600', '-100')}`}>
-          {icon}
-        </div>
-      </div>
-    </div>
-  )
+const CAT_COLORS = [
+  'bg-blue-500', 'bg-indigo-500', 'bg-violet-500',
+  'bg-amber-500', 'bg-emerald-500', 'bg-rose-500', 'bg-cyan-500',
+]
+
+const PRIORITY_DOT = {
+  Critical: 'bg-red-500',
+  High:     'bg-orange-400',
+  Medium:   'bg-yellow-400',
+  Low:      'bg-emerald-400',
+}
+const PRIORITY_BAR = {
+  Critical: 'bg-red-500',
+  High:     'bg-orange-400',
+  Medium:   'bg-yellow-400',
+  Low:      'bg-emerald-400',
+}
+const STATUS_DOT = {
+  Open:        'bg-blue-500',
+  'In Progress':'bg-amber-500',
+  Resolved:    'bg-emerald-500',
+  Closed:      'bg-slate-400',
 }
 
 export default function Dashboard() {
   const [tickets, setTickets] = useState([])
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
 
   useEffect(() => {
-    getAllTickets()
-      .then((res) => setTickets(res.data))
-      .catch(() => setError('Failed to load tickets'))
-      .finally(() => setLoading(false))
+    const minDelay = new Promise((r) => setTimeout(r, 400))
+    getAllTickets().then(({ data }) => {
+      if (data) setTickets(data)
+      minDelay.then(() => setLoading(false))
+    })
   }, [])
 
-  const counts = {
-    total: tickets.length,
-    open: tickets.filter((t) => t.status === 'Open').length,
-    inProgress: tickets.filter((t) => t.status === 'In Progress').length,
-    resolved: tickets.filter((t) => t.status === 'Resolved').length,
-  }
+  const total      = tickets.length
+  const open       = tickets.filter((t) => t.status === 'Open').length
+  const inProgress = tickets.filter((t) => t.status === 'In Progress').length
+  const resolved   = tickets.filter((t) => t.status === 'Resolved').length
 
-  const recentTickets = [...tickets].slice(0, 5)
+  const categoryMap = tickets.reduce((acc, t) => {
+    acc[t.issue_category] = (acc[t.issue_category] || 0) + 1
+    return acc
+  }, {})
+  const categories  = Object.entries(categoryMap).sort((a, b) => b[1] - a[1])
+  const maxCat      = categories[0]?.[1] || 1
+
+  const priorityCounts = ['Critical', 'High', 'Medium', 'Low'].map((p) => ({
+    label: p,
+    count: tickets.filter((t) => t.priority === p).length,
+  }))
+
+  const statCards = [
+    {
+      label: 'Total Tickets', value: total,
+      accent: 'border-l-indigo-500', iconBg: 'bg-indigo-50',
+      icon: <IconTicket size={20} className="text-indigo-600" />, trend: true,
+    },
+    {
+      label: 'Open', value: open,
+      accent: 'border-l-blue-500', iconBg: 'bg-blue-50',
+      icon: <IconCircleDot size={20} className="text-blue-600" />,
+    },
+    {
+      label: 'In Progress', value: inProgress,
+      accent: 'border-l-amber-500', iconBg: 'bg-amber-50',
+      icon: <IconClock size={20} className="text-amber-600" />,
+    },
+    {
+      label: 'Resolved', value: resolved,
+      accent: 'border-l-emerald-500', iconBg: 'bg-emerald-50',
+      icon: <IconCircleCheck size={20} className="text-emerald-600" />,
+    },
+  ]
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-600"></div>
-      </div>
-    )
-  }
-
-  if (error) {
-    return (
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="bg-red-50 border border-red-200 text-red-700 rounded-lg p-4">{error}</div>
+      <div className="p-6 space-y-6">
+        <div className="space-y-1">
+          <div className="skeleton-shimmer h-7 w-64 rounded" />
+          <div className="skeleton-shimmer h-4 w-96 rounded mt-2" />
+        </div>
+        <SkeletonLoader variant="stat-cards" />
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
+          <div className="lg:col-span-3"><SkeletonLoader variant="card" /></div>
+          <div className="lg:col-span-2"><SkeletonLoader variant="card" /></div>
+        </div>
       </div>
     )
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
-        <p className="text-sm text-gray-500 mt-1">Overview of helpdesk activity</p>
+    <div className="p-6 space-y-6">
+      {/* Welcome */}
+      <div>
+        <h1 className="text-2xl font-semibold text-slate-800">Good morning, Admin 👋</h1>
+        <p className="text-sm text-slate-500 mt-1">
+          Here's what's happening with your support queue today.
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-        <StatCard
-          label="Total Tickets"
-          value={counts.total}
-          colorClass="text-gray-700"
-          icon={
-            <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-            </svg>
-          }
-        />
-        <StatCard
-          label="Open"
-          value={counts.open}
-          colorClass="text-blue-600"
-          icon={
-            <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          }
-        />
-        <StatCard
-          label="In Progress"
-          value={counts.inProgress}
-          colorClass="text-amber-600"
-          icon={
-            <svg className="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-            </svg>
-          }
-        />
-        <StatCard
-          label="Resolved"
-          value={counts.resolved}
-          colorClass="text-green-600"
-          icon={
-            <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          }
-        />
-      </div>
-
-      <div className="bg-white rounded-lg border border-gray-200 shadow-sm">
-        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
-          <h2 className="text-base font-semibold text-gray-900">Recent Tickets</h2>
-          <Link to="/tickets" className="text-sm font-medium text-blue-600 hover:text-blue-800">
-            View All →
-          </Link>
-        </div>
-        {recentTickets.length === 0 ? (
-          <div className="text-center py-12 text-gray-400">No tickets yet. Create your first ticket.</div>
-        ) : (
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-100">
-              <thead>
-                <tr className="bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  <th className="px-6 py-3">ID</th>
-                  <th className="px-6 py-3">Employee</th>
-                  <th className="px-6 py-3">Category</th>
-                  <th className="px-6 py-3">Priority</th>
-                  <th className="px-6 py-3">Status</th>
-                  <th className="px-6 py-3">Created</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100 bg-white">
-                {recentTickets.map((ticket) => (
-                  <tr key={ticket.ticket_id} className="hover:bg-gray-50 transition-colors">
-                    <td className="px-6 py-3 text-sm font-mono text-gray-500">#{ticket.ticket_id}</td>
-                    <td className="px-6 py-3 text-sm text-gray-900">{ticket.employee_name}</td>
-                    <td className="px-6 py-3 text-sm text-gray-600">{ticket.issue_category}</td>
-                    <td className="px-6 py-3">
-                      <PriorityBadge priority={ticket.priority} />
-                    </td>
-                    <td className="px-6 py-3">
-                      <StatusBadge status={ticket.status} />
-                    </td>
-                    <td className="px-6 py-3 text-sm text-gray-500">
-                      {new Date(ticket.created_at).toLocaleDateString()}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+      {/* Stat cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {statCards.map(({ label, value, accent, iconBg, icon, trend }) => (
+          <div
+            key={label}
+            className={`bg-white rounded-xl border border-slate-200 p-5 border-l-4 ${accent} shadow-sm`}
+          >
+            <div className="flex items-start justify-between">
+              <div>
+                <p className="text-sm font-medium text-slate-500">{label}</p>
+                <p className="text-[32px] font-bold text-slate-900 leading-none mt-1">{value}</p>
+                {trend && (
+                  <div className="flex items-center gap-1 mt-2">
+                    <IconTrendingUp size={13} className="text-emerald-600" />
+                    <span className="text-xs text-emerald-600 font-medium">+12% from last week</span>
+                  </div>
+                )}
+              </div>
+              <div className={`w-10 h-10 rounded-lg ${iconBg} flex items-center justify-center shrink-0`}>
+                {icon}
+              </div>
+            </div>
           </div>
-        )}
+        ))}
+      </div>
+
+      {/* Middle row — recent tickets + category distribution */}
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
+        {/* Recent tickets */}
+        <div className="lg:col-span-3 card overflow-hidden">
+          <div className="flex items-center justify-between px-5 py-4 border-b border-slate-100">
+            <h2 className="text-sm font-semibold text-slate-800">Recent Tickets</h2>
+            <Link
+              to="/tickets"
+              className="flex items-center gap-1 text-xs font-medium text-blue-600 hover:text-blue-800"
+            >
+              View all <IconArrowRight size={13} />
+            </Link>
+          </div>
+
+          {tickets.length === 0 ? (
+            <EmptyState title="No tickets yet" description="Create a ticket to get started." />
+          ) : (
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="bg-slate-50 text-[11px] font-medium text-slate-400 uppercase tracking-wider border-b border-slate-100">
+                    <th className="px-5 py-3 text-left">Ticket</th>
+                    <th className="px-4 py-3 text-left">Category</th>
+                    <th className="px-4 py-3 text-left">Priority</th>
+                    <th className="px-4 py-3 text-left">Status</th>
+                    <th className="px-4 py-3 text-left">Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {tickets.slice(0, 6).map((t) => (
+                    <tr
+                      key={t.ticket_id}
+                      className="border-b border-slate-50 last:border-0 hover:bg-slate-50 transition-colors"
+                    >
+                      <td className="px-5 py-3">
+                        <Link to={`/tickets/${t.ticket_id}`}>
+                          <span className="text-sm font-semibold text-blue-600 font-mono">
+                            {formatTicketId(t.ticket_id)}
+                          </span>
+                          <span className="block text-xs text-slate-400 mt-0.5">{t.employee_name}</span>
+                        </Link>
+                      </td>
+                      <td className="px-4 py-3 text-sm text-slate-600">{t.issue_category}</td>
+                      <td className="px-4 py-3"><PriorityBadge priority={t.priority} /></td>
+                      <td className="px-4 py-3"><StatusBadge status={t.status} /></td>
+                      <td className="px-4 py-3 text-xs text-slate-400">{relativeTime(t.created_at)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
+
+        {/* Category bar chart */}
+        <div className="lg:col-span-2 card">
+          <div className="px-5 py-4 border-b border-slate-100">
+            <h2 className="text-sm font-semibold text-slate-800">Ticket Distribution</h2>
+          </div>
+          <div className="p-5">
+            {categories.length === 0 ? (
+              <EmptyState title="No data" description="Tickets will appear here." />
+            ) : (
+              <div className="space-y-4">
+                {categories.map(([cat, count], i) => (
+                  <div key={cat}>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-xs text-slate-600 truncate max-w-[150px]">{cat}</span>
+                      <span className="text-xs font-semibold text-slate-700 ml-2">{count}</span>
+                    </div>
+                    <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+                      <div
+                        className={`h-full rounded-full transition-all duration-500 ${CAT_COLORS[i % CAT_COLORS.length]}`}
+                        style={{ width: `${(count / maxCat) * 100}%` }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom row — priority breakdown + activity feed */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        {/* Priority breakdown */}
+        <div className="card p-5">
+          <h2 className="text-sm font-semibold text-slate-800 mb-4">Priority Breakdown</h2>
+          {total === 0 ? (
+            <p className="text-sm text-slate-400 text-center py-6">No ticket data</p>
+          ) : (
+            <>
+              <div className="flex h-3 rounded-full overflow-hidden mb-4 gap-px">
+                {priorityCounts.map(({ label, count }) => {
+                  const pct = total > 0 ? (count / total) * 100 : 0
+                  if (pct === 0) return null
+                  return (
+                    <div
+                      key={label}
+                      className={`${PRIORITY_BAR[label]} transition-all duration-500`}
+                      style={{ width: `${pct}%` }}
+                      title={`${label}: ${count}`}
+                    />
+                  )
+                })}
+              </div>
+              <div className="flex flex-wrap gap-4">
+                {priorityCounts.map(({ label, count }) => (
+                  <div key={label} className="flex items-center gap-1.5">
+                    <span className={`w-2.5 h-2.5 rounded-full ${PRIORITY_DOT[label]}`} />
+                    <span className="text-xs text-slate-600">
+                      {label} <span className="font-semibold text-slate-800">({count})</span>
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+
+        {/* Recent activity */}
+        <div className="card p-5">
+          <h2 className="text-sm font-semibold text-slate-800 mb-4">Recent Activity</h2>
+          {tickets.length === 0 ? (
+            <EmptyState title="No activity" description="Activity will appear here." />
+          ) : (
+            <div className="space-y-1">
+              {tickets.slice(0, 5).map((t, idx) => (
+                <div key={t.ticket_id} className="flex items-start gap-3">
+                  <div className="flex flex-col items-center shrink-0 mt-1">
+                    <span
+                      className={`w-2.5 h-2.5 rounded-full ${STATUS_DOT[t.status] || 'bg-blue-500'}`}
+                    />
+                    {idx < 4 && <span className="w-px flex-1 bg-slate-100 mt-1 mb-1 min-h-[16px]" />}
+                  </div>
+                  <div className="pb-3 flex-1 min-w-0">
+                    <p className="text-sm text-slate-700">
+                      Ticket{' '}
+                      <Link
+                        to={`/tickets/${t.ticket_id}`}
+                        className="font-semibold text-blue-600 hover:underline"
+                      >
+                        {formatTicketId(t.ticket_id)}
+                      </Link>{' '}
+                      {t.status === 'Open' ? (
+                        <>opened by <span className="font-medium">{t.employee_name}</span></>
+                      ) : (
+                        <>marked <span className="font-medium">{t.status}</span></>
+                      )}
+                    </p>
+                    <p className="text-xs text-slate-400 mt-0.5">{relativeTime(t.created_at)}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   )
