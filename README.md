@@ -153,3 +153,27 @@ The app will be available at `http://localhost:5173`.
 
 ### Status Values
 `Open` | `In Progress` | `Resolved` | `Closed`
+
+### Screenshots
+
+- Dashboard 
+<img width="1919" height="892" alt="image" src="https://github.com/user-attachments/assets/bc6df265-dded-4034-85b0-83c02242631b" />
+
+- Tickets 
+<img width="1919" height="883" alt="image" src="https://github.com/user-attachments/assets/f313368b-1e57-4c96-a9c2-7bf9610632fa" />
+
+- create ticket 
+<img width="1919" height="895" alt="image" src="https://github.com/user-attachments/assets/eeccc276-8308-4f61-9d5c-f2191190e51f" />
+
+- Categories 
+<img width="1919" height="895" alt="image" src="https://github.com/user-attachments/assets/ece6c049-399a-4cee-946c-def6cc97e954" />
+
+- Reports
+
+<img width="1919" height="891" alt="image" src="https://github.com/user-attachments/assets/2ddae725-f06e-42d2-ae49-3bb9c104763c" />
+
+
+
+
+
+
