@@ -7,8 +7,10 @@ import {
   IconCircleCheck,
   IconTrendingUp,
   IconArrowRight,
+  IconDatabase,
+  IconChartBar,
 } from '@tabler/icons-react'
-import { getAllTickets } from '../services/api'
+import { getAllTickets, getPipelineStatus } from '../services/api'
 import StatusBadge from '../components/StatusBadge'
 import PriorityBadge from '../components/PriorityBadge'
 import SkeletonLoader from '../components/SkeletonLoader'
@@ -42,11 +44,13 @@ const STATUS_DOT = {
 export default function Dashboard() {
   const [tickets, setTickets] = useState([])
   const [loading, setLoading] = useState(true)
+  const [pipeline, setPipeline] = useState(null)
 
   useEffect(() => {
     const minDelay = new Promise((r) => setTimeout(r, 400))
-    getAllTickets().then(({ data }) => {
-      if (data) setTickets(data)
+    Promise.all([getAllTickets(), getPipelineStatus()]).then(([ticketsRes, pipelineRes]) => {
+      if (ticketsRes.data) setTickets(ticketsRes.data)
+      if (pipelineRes.data) setPipeline(pipelineRes.data)
       minDelay.then(() => setLoading(false))
     })
   }, [])
@@ -226,6 +230,69 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
+
+      {/* Data Pipeline Status */}
+      {pipeline && (
+        <div className="card p-5">
+          <div className="flex items-center justify-between flex-wrap gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-indigo-50 flex items-center justify-center shrink-0">
+                <IconDatabase size={20} className="text-indigo-600" />
+              </div>
+              <div>
+                <h2 className="text-sm font-semibold text-slate-800">Data Pipeline Status</h2>
+                <div className="flex items-center gap-1.5 mt-0.5">
+                  {pipeline.is_healthy ? (
+                    <>
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+                      <span className="text-xs text-emerald-600 font-medium">Pipeline healthy</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="w-2 h-2 rounded-full bg-amber-400 shrink-0" />
+                      <span className="text-xs text-amber-600 font-medium">ETL not yet run</span>
+                    </>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-6 flex-wrap">
+              <div className="text-center">
+                <p className="text-[11px] text-slate-400 uppercase tracking-wide">Last Run</p>
+                <p className="text-sm font-semibold text-slate-700 mt-0.5">
+                  {pipeline.run_at ?? '—'}
+                </p>
+              </div>
+              <div className="text-center">
+                <p className="text-[11px] text-slate-400 uppercase tracking-wide">Rows Loaded</p>
+                <p className="text-sm font-semibold text-slate-700 mt-0.5">
+                  {pipeline.rows_loaded.toLocaleString()}
+                </p>
+              </div>
+              <div className="text-center">
+                <p className="text-[11px] text-slate-400 uppercase tracking-wide">Duplicates Removed</p>
+                <p className="text-sm font-semibold text-slate-700 mt-0.5">
+                  {pipeline.duplicates_removed.toLocaleString()}
+                </p>
+              </div>
+              <div className="text-center">
+                <p className="text-[11px] text-slate-400 uppercase tracking-wide">Source Rows</p>
+                <p className="text-sm font-semibold text-slate-700 mt-0.5">
+                  {pipeline.rows_extracted.toLocaleString()}
+                </p>
+              </div>
+              <Link
+                to="/analytics"
+                className="inline-flex items-center gap-1.5 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-lg transition-colors"
+              >
+                <IconChartBar size={15} />
+                View Analytics
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Bottom row — priority breakdown + activity feed */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">

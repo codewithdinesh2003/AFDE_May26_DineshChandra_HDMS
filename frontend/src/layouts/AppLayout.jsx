@@ -28,7 +28,7 @@ const NAV = [
     label: 'MANAGEMENT',
     items: [
       { to: '/categories', icon: IconTag,      label: 'Categories' },
-      { to: '/reports',    icon: IconChartBar, label: 'Reports' },
+      { to: '/analytics',  icon: IconChartBar, label: 'Analytics' },
     ],
   },
   {
@@ -44,6 +44,7 @@ const BREADCRUMB = {
   '/tickets':      'All Tickets',
   '/tickets/new':  'Create Ticket',
   '/categories':   'Categories',
+  '/analytics':    'Analytics',
   '/reports':      'Reports',
   '/profile':      'Profile',
 }

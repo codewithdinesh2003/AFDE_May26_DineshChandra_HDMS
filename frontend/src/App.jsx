@@ -7,6 +7,7 @@ import CreateTicket from './pages/CreateTicket'
 import TicketDetail from './pages/TicketDetail'
 import Categories from './pages/Categories'
 import Reports from './pages/Reports'
+import Analytics from './pages/Analytics'
 import NotFound from './pages/NotFound'
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
             <Route path="/tickets/:id"  element={<TicketDetail />} />
             <Route path="/categories"   element={<Categories />} />
             <Route path="/reports"      element={<Reports />} />
+            <Route path="/analytics"    element={<Analytics />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
