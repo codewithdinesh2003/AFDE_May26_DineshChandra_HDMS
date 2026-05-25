@@ -33,7 +33,8 @@ def get_summary(db: Session = Depends(get_db)):
                 COUNT(*) AS total_tickets,
                 SUM(status IN ('Resolved', 'Closed')) AS resolved_tickets,
                 SUM(status = 'Open') AS open_tickets,
-                ROUND(AVG(CASE WHEN resolution_time_days IS NOT NULL THEN resolution_time_days END), 2) AS avg_resolution_days
+                ROUND(AVG(CASE WHEN resolution_time_days IS NOT NULL THEN resolution_time_days END), 2) AS avg_resolution_days,
+                MAX(imported_at) AS last_imported_at
             FROM {TABLE}
         """)
     ).fetchone()
@@ -43,6 +44,7 @@ def get_summary(db: Session = Depends(get_db)):
     open_count = int(row.open_tickets or 0)
     avg_days = float(row.avg_resolution_days or 0)
     resolution_rate = round((resolved / total * 100), 2) if total else 0.0
+    last_imported = row.last_imported_at.strftime("%d %b %Y, %H:%M") if row.last_imported_at else None
 
     return {
         "total_tickets": total,
@@ -50,6 +52,7 @@ def get_summary(db: Session = Depends(get_db)):
         "open_tickets": open_count,
         "avg_resolution_days": avg_days,
         "resolution_rate_percent": resolution_rate,
+        "last_imported_at": last_imported,
     }
 
 

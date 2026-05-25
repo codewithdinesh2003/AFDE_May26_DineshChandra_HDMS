@@ -4,6 +4,7 @@ from database import engine
 import models
 from routers import tickets
 from routers import analytics
+from routers import etl
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -19,6 +20,7 @@ app.add_middleware(
 
 app.include_router(tickets.router)
 app.include_router(analytics.router)
+app.include_router(etl.router)
 
 
 @app.get("/")
