@@ -350,4 +350,10 @@ Includes all ticket fields plus:
 
 ### Phase 2
 
-**Analytics Dashboard** *(screenshot placeholder — run the ETL and navigate to `/analytics`)*
+**Analytics Dashboard** 
+
+<img width="1919" height="889" alt="image" src="https://github.com/user-attachments/assets/5c4c51de-4a41-4045-9a9f-46bfc557d1e8" />
+
+<img width="1919" height="895" alt="image" src="https://github.com/user-attachments/assets/0d6b6213-cab6-40d7-9838-4e8c4b99c0e7" />
+
+
