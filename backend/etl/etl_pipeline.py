@@ -39,6 +39,16 @@ class TicketAnalytics(Base):
     imported_at = Column(DateTime)
 
 
+class EtlMeta(Base):
+    __tablename__ = "etl_meta"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    run_at = Column(DateTime)
+    rows_extracted = Column(Integer)
+    duplicates_removed = Column(Integer)
+    rows_loaded = Column(Integer)
+
+
 def extract(csv_path: str) -> pd.DataFrame:
     df = pd.read_csv(csv_path)
     print(f"Extracted {len(df)} rows from CSV")
@@ -98,10 +108,10 @@ def transform(df: pd.DataFrame) -> tuple:
     return df, duplicates_removed
 
 
-def load(df: pd.DataFrame, database_url: str) -> int:
+def load(df: pd.DataFrame, database_url: str, rows_extracted: int, duplicates_removed: int) -> int:
     engine = create_engine(database_url)
     Base.metadata.drop_all(bind=engine, tables=[TicketAnalytics.__table__])
-    Base.metadata.create_all(bind=engine, tables=[TicketAnalytics.__table__])
+    Base.metadata.create_all(bind=engine, tables=[TicketAnalytics.__table__, EtlMeta.__table__])
 
     raw_records = df.to_dict(orient="records")
     # pandas converts None in mixed-type columns to float NaN; MySQL rejects NaN
@@ -113,6 +123,15 @@ def load(df: pd.DataFrame, database_url: str) -> int:
     session = SessionLocal()
     try:
         session.bulk_insert_mappings(TicketAnalytics, records)
+
+        # Persist run stats — keep only the latest record (truncate + insert)
+        session.execute(EtlMeta.__table__.delete())
+        session.add(EtlMeta(
+            run_at=datetime.utcnow(),
+            rows_extracted=rows_extracted,
+            duplicates_removed=duplicates_removed,
+            rows_loaded=len(records),
+        ))
         session.commit()
         print(f"Loaded {len(records)} rows into tickets_analytics")
     finally:
@@ -124,7 +143,7 @@ def load(df: pd.DataFrame, database_url: str) -> int:
 def run_pipeline() -> dict:
     df_raw = extract(CSV_PATH)
     df_transformed, duplicates_removed = transform(df_raw)
-    loaded_count = load(df_transformed, DATABASE_URL)
+    loaded_count = load(df_transformed, DATABASE_URL, len(df_raw), duplicates_removed)
 
     categories = sorted(df_transformed["issue_category"].unique().tolist())
     date_min = df_transformed["created_at"].min()

@@ -175,6 +175,27 @@ def get_resolution_trend(db: Session = Depends(get_db)):
     ]
 
 
+@router.get("/pipeline-status")
+def get_pipeline_status(db: Session = Depends(get_db)):
+    meta_exists = db.execute(
+        text("SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = DATABASE() AND table_name = 'etl_meta'"),
+    ).scalar()
+    if not meta_exists:
+        return {"is_healthy": False, "run_at": None, "rows_extracted": 0, "duplicates_removed": 0, "rows_loaded": 0}
+
+    row = db.execute(text("SELECT * FROM etl_meta ORDER BY id DESC LIMIT 1")).fetchone()
+    if not row:
+        return {"is_healthy": False, "run_at": None, "rows_extracted": 0, "duplicates_removed": 0, "rows_loaded": 0}
+
+    return {
+        "is_healthy": True,
+        "run_at": row.run_at.strftime("%d %b %Y, %H:%M") if row.run_at else None,
+        "rows_extracted": row.rows_extracted,
+        "duplicates_removed": row.duplicates_removed,
+        "rows_loaded": row.rows_loaded,
+    }
+
+
 @router.get("/top-issues")
 def get_top_issues(db: Session = Depends(get_db)):
     _require_table(db)
