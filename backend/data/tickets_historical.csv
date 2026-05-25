@@ -1,0 +1,251 @@
+employee_name,department,issue_category,description,priority,status,created_at,resolution_notes
+Kavitha Reddy,Operations,Email Access,"Cannot send emails, getting SMTP error",Critical,Resolved,2026-05-16 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Prasad Kulkarni,HR,Hardware Request,Need a wireless mouse and keyboard replacement,Medium,Closed,2026-04-04 12:02:03,Hardware procured and delivered to the user.
+Dinesh Pillai,Engineering,VPN Issue,Unable to connect to VPN from home network,High,Resolved,2025-12-14 12:02:03,VPN client reinstalled and configuration updated. Issue resolved.
+Jyothi Rao,Marketing,Password Reset,Need to reset AD password urgently,Low,Resolved,2026-04-25 12:02:03,Password reset completed successfully. User advised to update saved passwords.
+Amit Joshi,Sales,Email Access,Email inbox not loading in browser,Low,Closed,2026-03-22 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Rajesh Verma,Engineering,Hardware Request,Requesting USB hub for laptop connectivity,Medium,Closed,2026-03-19 12:02:03,Hardware procured and delivered to the user.
+Sanjay Tiwari,Sales,Password Reset,Forgot login password and need reset,Medium,Closed,2025-12-10 12:02:03,Password reset completed successfully. User advised to update saved passwords.
+Vijay Bose,Finance,Hardware Request,Requesting USB hub for laptop connectivity,Low,Resolved,2026-02-24 12:02:03,Hardware procured and delivered to the user.
+Vikram Patel,IT,Software Installation,Need Microsoft Office installed on new laptop,Critical,Resolved,2026-03-27 12:02:03,Software installed and activated. User confirmed it is working correctly.
+Venkat Raman,Operations,Network Connectivity,Slow internet speed affecting productivity,Low,Open,2026-03-13 12:02:03,
+Venkat Raman,Operations,Hardware Request,Need a wireless mouse and keyboard replacement,Low,Resolved,2026-02-05 12:02:03,Hardware procured and delivered to the user.
+Ganesh Shetty,HR,VPN Issue,VPN disconnects frequently during work hours,Low,Closed,2025-12-06 12:02:03,VPN client reinstalled and configuration updated. Issue resolved.
+Amit Joshi,Marketing,VPN Issue,Unable to connect to VPN from home network,Medium,Resolved,2026-03-01 12:02:03,VPN client reinstalled and configuration updated. Issue resolved.
+Neha Chandra,HR,Network Connectivity,Cannot access shared network drive,Medium,Resolved,2026-03-12 12:02:03,Network settings reconfigured and connectivity restored.
+Lakshmi Krishnan,Engineering,Email Access,"Cannot send emails, getting SMTP error",Medium,Resolved,2025-12-19 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Amit Joshi,Operations,VPN Issue,VPN connection drops every few minutes,Low,Resolved,2026-01-09 12:02:03,VPN client reinstalled and configuration updated. Issue resolved.
+Sanjay Tiwari,Engineering,Email Access,Unable to access Outlook emails since morning,High,Resolved,2026-05-01 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Anita Sharma,Operations,VPN Issue,VPN connection drops every few minutes,Medium,Open,2026-03-17 12:02:03,
+Rohit Dubey,HR,Hardware Request,Need a new headset for conference calls,Medium,Open,2026-03-03 12:02:03,
+Sanjay Tiwari,Operations,Hardware Request,Requesting an additional monitor for workstation,Medium,In Progress,2026-05-17 12:02:03,
+Harish Reddy,IT,Email Access,Email account not syncing on mobile device,Critical,Resolved,2025-12-10 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Smitha Balan,Operations,Laptop Issue,Laptop battery draining very fast,High,Resolved,2026-02-16 12:02:03,Hardware diagnosed and repaired/replaced. System is functioning normally.
+Rahul Gupta,Sales,Software Installation,Need Zoom client installed and configured,Low,Resolved,2026-03-03 12:02:03,Software installed and activated. User confirmed it is working correctly.
+Smitha Balan,IT,Email Access,Email account not syncing on mobile device,Medium,In Progress,2025-12-25 12:02:03,
+Meera Pillai,IT,Email Access,Unable to access Outlook emails since morning,Low,Open,2026-02-02 12:02:03,
+Ananya Singh,Engineering,Laptop Issue,Laptop overheating and shutting down automatically,High,Closed,2025-12-21 12:02:03,Hardware diagnosed and repaired/replaced. System is functioning normally.
+Neha Chandra,IT,VPN Issue,VPN disconnects frequently during work hours,Medium,Resolved,2026-05-22 12:02:03,VPN client reinstalled and configuration updated. Issue resolved.
+Arun Malhotra,Operations,Password Reset,Forgot login password and need reset,High,Resolved,2026-04-20 12:02:03,Password reset completed successfully. User advised to update saved passwords.
+Radha Krishna,IT,Email Access,Email inbox not loading in browser,High,Open,2026-03-12 12:02:03,
+Lakshmi Krishnan,Operations,VPN Issue,VPN connection drops every few minutes,Medium,In Progress,2026-05-19 12:02:03,
+Smitha Balan,Sales,Laptop Issue,Keyboard keys not responding on laptop,Low,In Progress,2026-05-03 12:02:03,
+Geeta Joshi,Marketing,Email Access,Calendar not syncing with email client,Low,Resolved,2026-04-18 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Rahul Gupta,Engineering,Hardware Request,Need a wireless mouse and keyboard replacement,Low,Open,2025-12-13 12:02:03,
+Balu Murugan,HR,Hardware Request,Requesting USB hub for laptop connectivity,Medium,Closed,2026-04-13 12:02:03,Hardware procured and delivered to the user.
+Padma Iyer,IT,Software Installation,Need Zoom client installed and configured,Low,Resolved,2026-05-07 12:02:03,Software installed and activated. User confirmed it is working correctly.
+Karthik Menon,Marketing,Laptop Issue,Laptop overheating and shutting down automatically,Low,Resolved,2026-03-04 12:02:03,Hardware diagnosed and repaired/replaced. System is functioning normally.
+Neha Chandra,Finance,VPN Issue,VPN connection drops every few minutes,High,Resolved,2026-01-04 12:02:03,VPN client reinstalled and configuration updated. Issue resolved.
+Balu Murugan,HR,Laptop Issue,Laptop overheating and shutting down automatically,Medium,In Progress,2026-01-13 12:02:03,
+Sanjay Tiwari,Finance,Hardware Request,Need a wireless mouse and keyboard replacement,High,In Progress,2026-01-20 12:02:03,
+Sanjay Tiwari,Operations,Email Access,Email account not syncing on mobile device,High,Resolved,2026-04-29 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Rahul Gupta,Engineering,VPN Issue,Getting authentication error when connecting to VPN,Low,In Progress,2026-02-01 12:02:03,
+Sanjay Tiwari,HR,Network Connectivity,No internet connectivity at workstation,Low,Resolved,2026-01-27 12:02:03,Network settings reconfigured and connectivity restored.
+Rajesh Verma,Sales,Hardware Request,Need a new headset for conference calls,Low,Open,2026-05-05 12:02:03,
+Divya Nambiar,Marketing,Network Connectivity,No internet connectivity at workstation,Medium,In Progress,2026-01-05 12:02:03,
+Karthik Menon,IT,Email Access,Calendar not syncing with email client,Medium,Closed,2026-03-07 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Jyothi Rao,HR,Email Access,Unable to access Outlook emails since morning,High,In Progress,2025-11-28 12:02:03,
+Suresh Kumar,HR,VPN Issue,VPN client not launching after Windows update,Medium,Resolved,2026-05-14 12:02:03,VPN client reinstalled and configuration updated. Issue resolved.
+Preethi Nair,Sales,Hardware Request,Requesting ergonomic chair and desk setup,Critical,Resolved,2026-03-25 12:02:03,Hardware procured and delivered to the user.
+Deepika Iyer,Operations,Password Reset,Forgot login password and need reset,Medium,Closed,2026-01-23 12:02:03,Password reset completed successfully. User advised to update saved passwords.
+Pooja Agarwal,Engineering,Email Access,Email account not syncing on mobile device,Low,Closed,2025-12-21 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Kavya Menon,HR,VPN Issue,VPN connection drops every few minutes,Low,Resolved,2025-12-02 12:02:03,VPN client reinstalled and configuration updated. Issue resolved.
+Suresh Kumar,Operations,Hardware Request,Requesting USB hub for laptop connectivity,Low,Open,2026-01-24 12:02:03,
+Kavya Menon,IT,Network Connectivity,Intermittent network drops throughout the day,Medium,Resolved,2026-03-08 12:02:03,Network settings reconfigured and connectivity restored.
+Venkat Raman,HR,VPN Issue,VPN client not launching after Windows update,Medium,Closed,2026-05-20 12:02:03,VPN client reinstalled and configuration updated. Issue resolved.
+Divya Nambiar,Sales,Network Connectivity,Intermittent network drops throughout the day,Low,Resolved,2025-12-06 12:02:03,Network settings reconfigured and connectivity restored.
+Harish Reddy,Sales,VPN Issue,Unable to connect to VPN from home network,Low,In Progress,2026-03-09 12:02:03,
+Manish Gupta,Engineering,Password Reset,Two-factor authentication not working after password change,Medium,Open,2025-12-16 12:02:03,
+Manish Gupta,Finance,Network Connectivity,Intermittent network drops throughout the day,Critical,Resolved,2026-05-15 12:02:03,Network settings reconfigured and connectivity restored.
+Balu Murugan,IT,Hardware Request,Requesting ergonomic chair and desk setup,Medium,Closed,2026-04-24 12:02:03,Hardware procured and delivered to the user.
+Asha Varma,Finance,Email Access,Email account not syncing on mobile device,Critical,Resolved,2025-12-11 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Venkat Raman,Engineering,Software Installation,Need Zoom client installed and configured,Medium,Open,2026-02-20 12:02:03,
+Preethi Nair,IT,Network Connectivity,No internet connectivity at workstation,High,Resolved,2026-04-26 12:02:03,Network settings reconfigured and connectivity restored.
+Smitha Balan,HR,Password Reset,Need to reset AD password urgently,Medium,In Progress,2026-05-09 12:02:03,
+Divya Nambiar,Sales,Network Connectivity,Cannot access shared network drive,High,In Progress,2026-05-23 12:02:03,
+Ajith Kumar,Operations,Laptop Issue,Keyboard keys not responding on laptop,High,Resolved,2026-01-05 12:02:03,Hardware diagnosed and repaired/replaced. System is functioning normally.
+Arjun Sharma,Finance,Hardware Request,Requesting ergonomic chair and desk setup,High,In Progress,2026-03-07 12:02:03,
+Sunil Mathews,Sales,Password Reset,Account locked after multiple failed login attempts,Low,Open,2025-12-26 12:02:03,
+Jyothi Rao,Marketing,Password Reset,Need to reset AD password urgently,Low,Resolved,2026-02-27 12:02:03,Password reset completed successfully. User advised to update saved passwords.
+Asha Varma,Engineering,Laptop Issue,Screen flickering intermittently on laptop,High,Open,2026-01-21 12:02:03,
+Divya Nambiar,Marketing,Software Installation,Requesting installation of SAP client software,Low,Closed,2026-05-25 12:02:03,Software installed and activated. User confirmed it is working correctly.
+Manish Gupta,Sales,VPN Issue,VPN disconnects frequently during work hours,Medium,Resolved,2026-01-01 12:02:03,VPN client reinstalled and configuration updated. Issue resolved.
+Manoj Singh,Marketing,Email Access,Calendar not syncing with email client,Low,Open,2026-05-04 12:02:03,
+Rajesh Verma,Engineering,Laptop Issue,Laptop battery draining very fast,Low,Resolved,2025-11-27 12:02:03,Hardware diagnosed and repaired/replaced. System is functioning normally.
+Meera Pillai,Engineering,Hardware Request,Requesting an additional monitor for workstation,Low,Resolved,2025-12-13 12:02:03,Hardware procured and delivered to the user.
+Jyothi Rao,Operations,Hardware Request,Requesting an additional monitor for workstation,Medium,Open,2026-05-23 12:02:03,
+Jyothi Rao,Operations,Laptop Issue,Laptop not booting up after Windows update,Critical,Resolved,2026-03-18 12:02:03,Hardware diagnosed and repaired/replaced. System is functioning normally.
+Rahul Gupta,Marketing,Network Connectivity,No internet connectivity at workstation,High,Resolved,2026-04-13 12:02:03,Network settings reconfigured and connectivity restored.
+Vijay Bose,HR,VPN Issue,Getting authentication error when connecting to VPN,Low,Resolved,2026-05-08 12:02:03,VPN client reinstalled and configuration updated. Issue resolved.
+Jyothi Rao,Finance,Email Access,Calendar not syncing with email client,Low,In Progress,2026-03-25 12:02:03,
+Shalini Patel,Sales,Hardware Request,Requesting ergonomic chair and desk setup,Low,Resolved,2026-03-08 12:02:03,Hardware procured and delivered to the user.
+Kavya Menon,Finance,Network Connectivity,Slow internet speed affecting productivity,Medium,In Progress,2025-12-09 12:02:03,
+Shalini Patel,Engineering,Software Installation,Need Microsoft Office installed on new laptop,Medium,Resolved,2025-12-09 12:02:03,Software installed and activated. User confirmed it is working correctly.
+Lakshmi Krishnan,HR,Hardware Request,Requesting an additional monitor for workstation,Critical,Open,2025-12-03 12:02:03,
+Ganesh Shetty,IT,Software Installation,Request to install Adobe Acrobat Pro,High,In Progress,2026-02-20 12:02:03,
+Jyothi Rao,Finance,Software Installation,Need Zoom client installed and configured,Medium,In Progress,2026-04-16 12:02:03,
+Vikram Patel,Sales,Hardware Request,Requesting USB hub for laptop connectivity,High,Resolved,2026-03-23 12:02:03,Hardware procured and delivered to the user.
+Sunita Rao,Marketing,Software Installation,AutoCAD installation required for design work,Critical,Open,2026-01-31 12:02:03,
+Ajith Kumar,Operations,Password Reset,Need to reset AD password urgently,High,Resolved,2025-12-12 12:02:03,Password reset completed successfully. User advised to update saved passwords.
+Geeta Joshi,Finance,Laptop Issue,Laptop not booting up after Windows update,Low,Resolved,2026-02-18 12:02:03,Hardware diagnosed and repaired/replaced. System is functioning normally.
+Sneha Bhatt,IT,Hardware Request,Need a new headset for conference calls,Medium,Resolved,2026-03-03 12:02:03,Hardware procured and delivered to the user.
+Venkat Raman,Sales,Network Connectivity,Slow internet speed affecting productivity,Critical,Resolved,2026-03-11 12:02:03,Network settings reconfigured and connectivity restored.
+Karthik Menon,Sales,VPN Issue,VPN client not launching after Windows update,Medium,Open,2026-04-05 12:02:03,
+Kavya Menon,Finance,Email Access,Calendar not syncing with email client,Low,Closed,2025-12-16 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Sunita Rao,HR,Password Reset,Account locked after multiple failed login attempts,Low,Resolved,2026-05-19 12:02:03,Password reset completed successfully. User advised to update saved passwords.
+Rajesh Verma,Sales,Hardware Request,Need a new headset for conference calls,Low,Open,2026-05-05 12:02:03,
+Lakshmi Krishnan,Operations,Password Reset,Two-factor authentication not working after password change,High,Open,2025-12-07 12:02:03,
+Amit Joshi,IT,Hardware Request,Requesting USB hub for laptop connectivity,Low,Resolved,2025-12-02 12:02:03,Hardware procured and delivered to the user.
+Vijay Bose,Marketing,VPN Issue,Getting authentication error when connecting to VPN,Medium,Resolved,2026-05-17 12:02:03,VPN client reinstalled and configuration updated. Issue resolved.
+Vijay Bose,Marketing,Password Reset,Password expired and unable to log in,High,In Progress,2026-05-07 12:02:03,
+Preethi Nair,Marketing,VPN Issue,VPN connection drops every few minutes,Low,Resolved,2026-02-14 12:02:03,VPN client reinstalled and configuration updated. Issue resolved.
+Balu Murugan,Marketing,Email Access,Email inbox not loading in browser,Low,Resolved,2026-05-16 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Lakshmi Krishnan,IT,Software Installation,Request to install Adobe Acrobat Pro,High,Closed,2026-01-02 12:02:03,Software installed and activated. User confirmed it is working correctly.
+Arun Malhotra,Operations,Network Connectivity,Cannot access shared network drive,Low,Closed,2026-04-10 12:02:03,Network settings reconfigured and connectivity restored.
+Deepika Iyer,HR,Password Reset,Forgot login password and need reset,Low,Resolved,2026-02-11 12:02:03,Password reset completed successfully. User advised to update saved passwords.
+Balu Murugan,Finance,Email Access,Email account not syncing on mobile device,Medium,Closed,2025-12-04 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Geeta Joshi,Engineering,Network Connectivity,Slow internet speed affecting productivity,Low,Resolved,2026-03-10 12:02:03,Network settings reconfigured and connectivity restored.
+Preethi Nair,Finance,Laptop Issue,Laptop overheating and shutting down automatically,Medium,Resolved,2026-04-25 12:02:03,Hardware diagnosed and repaired/replaced. System is functioning normally.
+Padma Iyer,Engineering,Hardware Request,Need a wireless mouse and keyboard replacement,Low,Resolved,2026-04-08 12:02:03,Hardware procured and delivered to the user.
+Smitha Balan,Operations,Laptop Issue,Laptop battery draining very fast,High,Resolved,2026-02-16 12:02:03,Hardware diagnosed and repaired/replaced. System is functioning normally.
+Divya Nambiar,Operations,Password Reset,Need to reset AD password urgently,Low,Open,2026-05-10 12:02:03,
+Venkat Raman,HR,VPN Issue,VPN connection drops every few minutes,Critical,Closed,2025-12-19 12:02:03,VPN client reinstalled and configuration updated. Issue resolved.
+Radha Krishna,Finance,Network Connectivity,Cannot access shared network drive,Low,Open,2026-04-08 12:02:03,
+Kavya Menon,IT,Software Installation,Request to install Adobe Acrobat Pro,Medium,Open,2026-01-09 12:02:03,
+Dinesh Pillai,Finance,Network Connectivity,Intermittent network drops throughout the day,High,Resolved,2025-11-29 12:02:03,Network settings reconfigured and connectivity restored.
+Ganesh Shetty,Marketing,Hardware Request,Need a new headset for conference calls,Low,Closed,2025-12-06 12:02:03,Hardware procured and delivered to the user.
+Anita Sharma,IT,VPN Issue,VPN client not launching after Windows update,Low,Closed,2026-04-22 12:02:03,VPN client reinstalled and configuration updated. Issue resolved.
+Sanjay Tiwari,IT,Password Reset,Forgot login password and need reset,Low,Resolved,2025-12-11 12:02:03,Password reset completed successfully. User advised to update saved passwords.
+Rahul Gupta,Engineering,VPN Issue,Getting authentication error when connecting to VPN,Low,Resolved,2026-01-30 12:02:03,VPN client reinstalled and configuration updated. Issue resolved.
+Kavya Menon,HR,Password Reset,Two-factor authentication not working after password change,Low,In Progress,2026-04-25 12:02:03,
+Manish Gupta,Finance,Email Access,Unable to access Outlook emails since morning,Medium,Resolved,2026-05-08 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Prasad Kulkarni,Sales,Hardware Request,Requesting USB hub for laptop connectivity,Critical,In Progress,2026-01-23 12:02:03,
+Manish Gupta,Finance,Network Connectivity,Intermittent network drops throughout the day,High,Resolved,2026-01-23 12:02:03,Network settings reconfigured and connectivity restored.
+Jyothi Rao,Engineering,Email Access,Email inbox not loading in browser,Low,Resolved,2026-03-26 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Arun Malhotra,Engineering,Hardware Request,Requesting USB hub for laptop connectivity,Low,Closed,2026-03-29 12:02:03,Hardware procured and delivered to the user.
+Dinesh Pillai,HR,Hardware Request,Need a new headset for conference calls,High,Resolved,2026-05-06 12:02:03,Hardware procured and delivered to the user.
+Vikram Patel,Engineering,Email Access,Email account not syncing on mobile device,High,Resolved,2025-12-24 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Sneha Bhatt,Marketing,Hardware Request,Requesting ergonomic chair and desk setup,Low,Resolved,2026-02-22 12:02:03,Hardware procured and delivered to the user.
+Manish Gupta,IT,Password Reset,Account locked after multiple failed login attempts,High,Closed,2026-01-10 12:02:03,Password reset completed successfully. User advised to update saved passwords.
+Sanjay Tiwari,Finance,VPN Issue,VPN disconnects frequently during work hours,Low,In Progress,2026-02-20 12:02:03,
+Manoj Singh,Sales,Hardware Request,Need a new headset for conference calls,Medium,Resolved,2026-02-26 12:02:03,Hardware procured and delivered to the user.
+Manoj Singh,Engineering,Network Connectivity,Cannot access shared network drive,Low,Resolved,2026-02-03 12:02:03,Network settings reconfigured and connectivity restored.
+Vijay Bose,Finance,Password Reset,Need to reset AD password urgently,Low,In Progress,2025-12-31 12:02:03,
+Ananya Singh,Marketing,Network Connectivity,Intermittent network drops throughout the day,Medium,Resolved,2025-12-10 12:02:03,Network settings reconfigured and connectivity restored.
+Geeta Joshi,IT,Email Access,Calendar not syncing with email client,Medium,Resolved,2026-01-21 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Pooja Agarwal,IT,Network Connectivity,Cannot access shared network drive,High,Open,2026-02-09 12:02:03,
+Radha Krishna,Finance,Network Connectivity,Cannot access shared network drive,Low,Open,2026-04-08 12:02:03,
+Vijay Bose,Engineering,Password Reset,Forgot login password and need reset,Low,Resolved,2026-03-23 12:02:03,Password reset completed successfully. User advised to update saved passwords.
+Venkat Raman,Engineering,Password Reset,Account locked after multiple failed login attempts,Medium,Resolved,2026-05-18 12:02:03,Password reset completed successfully. User advised to update saved passwords.
+Vikram Patel,IT,Laptop Issue,Keyboard keys not responding on laptop,Medium,Resolved,2026-03-19 12:02:03,Hardware diagnosed and repaired/replaced. System is functioning normally.
+Ganesh Shetty,HR,Laptop Issue,Keyboard keys not responding on laptop,Medium,In Progress,2026-02-28 12:02:03,
+Sunita Rao,Finance,Hardware Request,Requesting an additional monitor for workstation,High,Resolved,2025-11-30 12:02:03,Hardware procured and delivered to the user.
+Rajesh Verma,Finance,Software Installation,Need Zoom client installed and configured,Medium,In Progress,2025-12-22 12:02:03,
+Jyothi Rao,Operations,Hardware Request,Requesting an additional monitor for workstation,Medium,Open,2026-05-23 12:02:03,
+Vikram Patel,Sales,Email Access,Calendar not syncing with email client,Critical,Open,2026-03-30 12:02:03,
+Venkat Raman,IT,Network Connectivity,Unable to access internal network resources,Low,Resolved,2026-01-08 12:02:03,Network settings reconfigured and connectivity restored.
+Suresh Kumar,Operations,Hardware Request,Requesting USB hub for laptop connectivity,Low,Open,2026-01-24 12:02:03,
+Rajesh Verma,Operations,Laptop Issue,Laptop not booting up after Windows update,Low,Resolved,2025-12-11 12:02:03,Hardware diagnosed and repaired/replaced. System is functioning normally.
+Lakshmi Krishnan,HR,VPN Issue,VPN disconnects frequently during work hours,Medium,In Progress,2025-12-23 12:02:03,
+Meera Pillai,Operations,Email Access,Email account not syncing on mobile device,Low,In Progress,2026-04-16 12:02:03,
+Vikram Patel,HR,Email Access,"Cannot send emails, getting SMTP error",Low,In Progress,2026-02-23 12:02:03,
+Sanjay Tiwari,Sales,Email Access,Calendar not syncing with email client,High,Resolved,2026-05-03 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Shalini Patel,Marketing,VPN Issue,Getting authentication error when connecting to VPN,Low,Open,2026-05-18 12:02:03,
+Manoj Singh,Operations,Software Installation,AutoCAD installation required for design work,Critical,Closed,2025-12-19 12:02:03,Software installed and activated. User confirmed it is working correctly.
+Venkat Raman,Engineering,Email Access,"Cannot send emails, getting SMTP error",Medium,Closed,2026-01-17 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Rohit Dubey,Engineering,Laptop Issue,Keyboard keys not responding on laptop,Medium,Open,2026-03-15 12:02:03,
+Balu Murugan,Marketing,Email Access,Email inbox not loading in browser,Low,Resolved,2026-05-16 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Suresh Kumar,IT,Software Installation,Need Zoom client installed and configured,Low,In Progress,2026-02-20 12:02:03,
+Geeta Joshi,Marketing,Network Connectivity,No internet connectivity at workstation,Low,Resolved,2025-12-28 12:02:03,Network settings reconfigured and connectivity restored.
+Karthik Menon,Operations,Software Installation,Need Microsoft Office installed on new laptop,High,Resolved,2026-05-14 12:02:03,Software installed and activated. User confirmed it is working correctly.
+Neha Chandra,Operations,Software Installation,Request to install Adobe Acrobat Pro,Low,In Progress,2025-12-18 12:02:03,
+Jyothi Rao,Engineering,Email Access,Email inbox not loading in browser,Low,Resolved,2026-03-26 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Arun Malhotra,Marketing,Hardware Request,Requesting USB hub for laptop connectivity,Medium,Resolved,2025-12-09 12:02:03,Hardware procured and delivered to the user.
+Dinesh Pillai,Operations,Email Access,Email account not syncing on mobile device,Low,Closed,2026-04-21 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Karthik Menon,Marketing,Laptop Issue,Laptop overheating and shutting down automatically,Low,Resolved,2026-03-04 12:02:03,Hardware diagnosed and repaired/replaced. System is functioning normally.
+Sanjay Tiwari,Engineering,Laptop Issue,Laptop not booting up after Windows update,Low,Resolved,2026-02-23 12:02:03,Hardware diagnosed and repaired/replaced. System is functioning normally.
+Padma Iyer,IT,Password Reset,Forgot login password and need reset,Critical,Resolved,2026-05-23 12:02:03,Password reset completed successfully. User advised to update saved passwords.
+Suresh Kumar,Engineering,Laptop Issue,Keyboard keys not responding on laptop,Medium,In Progress,2026-02-26 12:02:03,
+Deepika Iyer,Finance,Password Reset,Password expired and unable to log in,Low,Resolved,2026-05-17 12:02:03,Password reset completed successfully. User advised to update saved passwords.
+Smitha Balan,IT,Email Access,Email account not syncing on mobile device,Medium,In Progress,2025-12-25 12:02:03,
+Suresh Kumar,Engineering,Hardware Request,Need a new headset for conference calls,Medium,Resolved,2025-12-20 12:02:03,Hardware procured and delivered to the user.
+Anita Sharma,IT,Hardware Request,Requesting USB hub for laptop connectivity,High,Closed,2025-12-23 12:02:03,Hardware procured and delivered to the user.
+Sanjay Tiwari,Sales,Hardware Request,Need a new headset for conference calls,Low,Closed,2026-01-01 12:02:03,Hardware procured and delivered to the user.
+Suresh Kumar,HR,Hardware Request,Need a new headset for conference calls,Low,Closed,2026-03-29 12:02:03,Hardware procured and delivered to the user.
+Arjun Sharma,Sales,Laptop Issue,Laptop not booting up after Windows update,Low,Open,2026-05-21 12:02:03,
+Nikhil Pandey,Sales,Laptop Issue,Laptop battery draining very fast,Medium,Closed,2026-02-10 12:02:03,Hardware diagnosed and repaired/replaced. System is functioning normally.
+Smitha Balan,HR,Email Access,Unable to access Outlook emails since morning,Medium,Resolved,2026-02-05 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Prasad Kulkarni,Engineering,Software Installation,Need Zoom client installed and configured,Low,Closed,2025-12-08 12:02:03,Software installed and activated. User confirmed it is working correctly.
+Anita Sharma,Marketing,Software Installation,Need Zoom client installed and configured,High,In Progress,2026-02-10 12:02:03,
+Rajesh Verma,Operations,Hardware Request,Requesting an additional monitor for workstation,Medium,Open,2026-03-17 12:02:03,
+Amit Joshi,Marketing,Hardware Request,Requesting USB hub for laptop connectivity,Critical,Open,2026-01-02 12:02:03,
+Manish Gupta,Finance,Email Access,Unable to access Outlook emails since morning,Medium,Resolved,2026-05-08 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Sanjay Tiwari,Finance,VPN Issue,VPN disconnects frequently during work hours,Low,In Progress,2026-02-20 12:02:03,
+Arun Malhotra,IT,Email Access,Email inbox not loading in browser,Low,In Progress,2026-05-24 12:02:03,
+Neha Chandra,Sales,Password Reset,Forgot login password and need reset,Low,Open,2026-02-18 12:02:03,
+Radha Krishna,Engineering,Email Access,Calendar not syncing with email client,Medium,Resolved,2025-12-25 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Karthik Menon,IT,Email Access,Calendar not syncing with email client,Medium,Closed,2026-03-07 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Ajith Kumar,Sales,Software Installation,Need Zoom client installed and configured,Medium,Closed,2025-12-11 12:02:03,Software installed and activated. User confirmed it is working correctly.
+Pooja Agarwal,Finance,Email Access,Calendar not syncing with email client,High,Resolved,2025-12-09 12:02:03,Email account reconfigured and syncing restored. Issue resolved.
+Lakshmi Krishnan,IT,Laptop Issue,Screen flickering intermittently on laptop,Low,Closed,2026-02-12 12:02:03,Hardware diagnosed and repaired/replaced. System is functioning normally.
+Padma Iyer,Engineering,Hardware Request,Need a wireless mouse and keyboard replacement,Low,Resolved,2026-04-08 12:02:03,Hardware procured and delivered to the user.
+Harish Reddy,Operations,Laptop Issue,Laptop not booting up after Windows update,Low,Closed,2025-12-31 12:02:03,Hardware diagnosed and repaired/replaced. System is functioning normally.
+Neha Chandra,Finance,Software Installation,AutoCAD installation required for design work,Medium,Resolved,2026-01-25 12:02:03,Software installed and activated. User confirmed it is working correctly.
+Smitha Balan,Finance,VPN Issue,VPN disconnects frequently during work hours,High,In Progress,2026-03-13 12:02:03,
+Ganesh Shetty,Finance,VPN Issue,Getting authentication error when connecting to VPN,Low,Resolved,2026-02-09 12:02:03,VPN client reinstalled and configuration updated. Issue resolved.
+Dinesh Pillai,Engineering,Hardware Request,Requesting USB hub for laptop connectivity,Low,In Progress,2026-01-19 12:02:03,
+Radha Krishna,HR,Network Connectivity,Intermittent network drops throughout the day,Critical,In Progress,2026-05-14 12:02:03,
+Arun Malhotra,Finance,VPN Issue,Getting authentication error when connecting to VPN,Medium,Resolved,2025-12-19 12:02:03,VPN client reinstalled and configuration updated. Issue resolved.
+Balu Murugan,HR,Email Access,Email account not syncing on mobile device,Low,Open,2026-03-04 12:02:03,
+Arjun Sharma,Sales,Network Connectivity,Intermittent network drops throughout the day,Low,Resolved,2026-02-21 12:02:03,Network settings reconfigured and connectivity restored.
+Prasad Kulkarni,Marketing,Laptop Issue,Laptop not booting up after Windows update,Medium,Resolved,2026-01-07 12:02:03,Hardware diagnosed and repaired/replaced. System is functioning normally.
+Venkat Raman,Operations,Network Connectivity,Slow internet speed affecting productivity,Low,Open,2026-03-13 12:02:03,
+Manish Gupta,Finance,Software Installation,Need Microsoft Office installed on new laptop,Low,Closed,2026-02-05 12:02:03,Software installed and activated. User confirmed it is working correctly.
+Radha Krishna,Operations,Laptop Issue,Screen flickering intermittently on laptop,Medium,Resolved,2025-12-17 12:02:03,Hardware diagnosed and repaired/replaced. System is functioning normally.
+Arun Malhotra,Operations,Laptop Issue,Laptop overheating and shutting down automatically,Low,Resolved,2026-03-22 12:02:03,Hardware diagnosed and repaired/replaced. System is functioning normally.
+Geeta Joshi,Engineering,VPN Issue,Getting authentication error when connecting to VPN,Medium,Closed,2026-02-20 12:02:03,VPN client reinstalled and configuration updated. Issue resolved.
+Harish Reddy,Marketing,Laptop Issue,Laptop battery draining very fast,Medium,Resolved,2026-02-03 12:02:03,Hardware diagnosed and repaired/replaced. System is functioning normally.
+Rohit Dubey,Marketing,Laptop Issue,Keyboard keys not responding on laptop,Low,Open,2026-03-16 12:02:03,
+Kavitha Reddy,Sales,Hardware Request,Requesting USB hub for laptop connectivity,Low,Closed,2026-02-28 12:02:03,Hardware procured and delivered to the user.
+Balu Murugan,Operations,Password Reset,Password expired and unable to log in,High,Resolved,2026-01-26 12:02:03,Password reset completed successfully. User advised to update saved passwords.
+Radha Krishna,Operations,Network Connectivity,No internet connectivity at workstation,High,Closed,2026-02-11 12:02:03,Network settings reconfigured and connectivity restored.
+Divya Nambiar,Sales,Password Reset,Account locked after multiple failed login attempts,Low,Closed,2026-02-23 12:02:03,Password reset completed successfully. User advised to update saved passwords.
+Geeta Joshi,Engineering,VPN Issue,Getting authentication error when connecting to VPN,Medium,Closed,2026-02-20 12:02:03,VPN client reinstalled and configuration updated. Issue resolved.
+Asha Varma,IT,VPN Issue,VPN connection drops every few minutes,Medium,Resolved,2026-01-25 12:02:03,VPN client reinstalled and configuration updated. Issue resolved.
+Radha Krishna,Finance,Network Connectivity,Cannot access shared network drive,Low,Open,2026-04-08 12:02:03,
+Preethi Nair,Sales,Hardware Request,Requesting ergonomic chair and desk setup,Critical,Resolved,2026-03-25 12:02:03,Hardware procured and delivered to the user.
+Sunita Rao,Marketing,Network Connectivity,No internet connectivity at workstation,High,In Progress,2026-04-03 12:02:03,
+Kavitha Reddy,IT,Password Reset,Account locked after multiple failed login attempts,Low,Open,2026-04-01 12:02:03,
+Manish Gupta,IT,VPN Issue,VPN disconnects frequently during work hours,Medium,In Progress,2026-03-25 12:02:03,
+Prasad Kulkarni,IT,Software Installation,Need Microsoft Office installed on new laptop,Low,In Progress,2026-04-20 12:02:03,
+Vikram Patel,Engineering,Software Installation,Request to install Adobe Acrobat Pro,High,Resolved,2026-03-22 12:02:03,Software installed and activated. User confirmed it is working correctly.
+Rajesh Verma,Finance,Hardware Request,Requesting ergonomic chair and desk setup,Low,Resolved,2026-04-15 12:02:03,Hardware procured and delivered to the user.
+Harish Reddy,Marketing,Laptop Issue,Laptop battery draining very fast,Medium,Resolved,2026-02-03 12:02:03,Hardware diagnosed and repaired/replaced. System is functioning normally.
+Anita Sharma,Operations,Password Reset,Two-factor authentication not working after password change,Low,Resolved,2026-02-01 12:02:03,Password reset completed successfully. User advised to update saved passwords.
+Rajesh Verma,Operations,Hardware Request,Need a new headset for conference calls,Low,Open,2026-01-25 12:02:03,
+Arun Malhotra,IT,VPN Issue,VPN disconnects frequently during work hours,Medium,Resolved,2026-03-26 12:02:03,VPN client reinstalled and configuration updated. Issue resolved.
+Vijay Bose,Sales,Laptop Issue,Laptop battery draining very fast,Medium,Open,2025-12-09 12:02:03,
+Suresh Kumar,Sales,VPN Issue,Getting authentication error when connecting to VPN,Low,Closed,2026-02-18 12:02:03,VPN client reinstalled and configuration updated. Issue resolved.
+Ravi Shankar,Marketing,Network Connectivity,Cannot access shared network drive,Medium,Resolved,2026-02-15 12:02:03,Network settings reconfigured and connectivity restored.
+Dinesh Pillai,IT,Hardware Request,Requesting an additional monitor for workstation,Critical,Open,2026-05-04 12:02:03,
+Balu Murugan,Finance,Software Installation,Need Zoom client installed and configured,Critical,In Progress,2026-03-14 12:02:03,
+Neha Chandra,Operations,Laptop Issue,Laptop battery draining very fast,Critical,In Progress,2026-05-25 12:02:03,
+Venkat Raman,Operations,Software Installation,Request to install Adobe Acrobat Pro,Low,Resolved,2026-01-04 12:02:03,Software installed and activated. User confirmed it is working correctly.
+Neha Chandra,Finance,Network Connectivity,Unable to access internal network resources,Medium,In Progress,2026-03-22 12:02:03,
+Manoj Singh,HR,Network Connectivity,Cannot access shared network drive,Critical,Resolved,2026-04-30 12:02:03,Network settings reconfigured and connectivity restored.
+Vikram Patel,HR,Software Installation,Need Zoom client installed and configured,Low,Resolved,2026-05-12 12:02:03,Software installed and activated. User confirmed it is working correctly.
+Dinesh Pillai,HR,VPN Issue,Unable to connect to VPN from home network,Low,In Progress,2025-12-28 12:02:03,
+Rohit Dubey,Engineering,Laptop Issue,Keyboard keys not responding on laptop,Medium,Open,2026-03-15 12:02:03,
+Karthik Menon,Marketing,Network Connectivity,Unable to access internal network resources,High,Resolved,2025-12-09 12:02:03,Network settings reconfigured and connectivity restored.
+Manish Gupta,Finance,Network Connectivity,Cannot access shared network drive,High,Closed,2026-02-04 12:02:03,Network settings reconfigured and connectivity restored.
+Sunita Rao,Finance,VPN Issue,Unable to connect to VPN from home network,High,In Progress,2026-02-26 12:02:03,
+Kavitha Reddy,Marketing,Email Access,Email account not syncing on mobile device,Low,Open,2026-05-16 12:02:03,
+Vikram Patel,Engineering,Software Installation,Request to install Adobe Acrobat Pro,High,Resolved,2026-03-22 12:02:03,Software installed and activated. User confirmed it is working correctly.
+Rohit Dubey,Engineering,Laptop Issue,Laptop battery draining very fast,Low,Resolved,2025-12-07 12:02:03,Hardware diagnosed and repaired/replaced. System is functioning normally.
+Sunil Mathews,Operations,Network Connectivity,Unable to access internal network resources,Low,In Progress,2026-05-17 12:02:03,
+Arjun Sharma,Marketing,Software Installation,AutoCAD installation required for design work,High,Resolved,2026-04-10 12:02:03,Software installed and activated. User confirmed it is working correctly.
+Prasad Kulkarni,IT,Email Access,Unable to access Outlook emails since morning,Medium,Open,2026-03-07 12:02:03,
+Ganesh Shetty,IT,Network Connectivity,Intermittent network drops throughout the day,Low,Resolved,2026-05-16 12:02:03,Network settings reconfigured and connectivity restored.
+Rajesh Verma,IT,Hardware Request,Need a new headset for conference calls,Medium,In Progress,2026-04-14 12:02:03,
+Shalini Patel,Marketing,Hardware Request,Requesting USB hub for laptop connectivity,Critical,Resolved,2025-12-25 12:02:03,Hardware procured and delivered to the user.
+Divya Nambiar,Finance,Email Access,Email account not syncing on mobile device,Medium,Resolved,2025-11-26 12:02:03,Email account reconfigured and syncing restored. Issue resolved.

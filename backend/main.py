@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from database import engine
 import models
 from routers import tickets
+from routers import analytics
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -17,6 +18,7 @@ app.add_middleware(
 )
 
 app.include_router(tickets.router)
+app.include_router(analytics.router)
 
 
 @app.get("/")
